@@ -1,7 +1,7 @@
 from random import randint
 import pyglet
 from pyglet.window import key
-from engine import Part, Point, DistanceConstraint, circle_parametric
+from engine import Part, DistanceConstraint, circle_parametric
 
 window = pyglet.window.Window()
 window.set_size(1024, 768)
@@ -21,7 +21,6 @@ def create_body(sizes=[50]):
     constraints = []
     for i in range(len(sizes)-1):
         constraints.append(DistanceConstraint(body[i], body[i+1], length=50, color=(200, 200,200), batch=constraint_batch))
-        
     
     return body, constraints
 
